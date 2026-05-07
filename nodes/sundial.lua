@@ -4,7 +4,7 @@ local sundial_node_box = {
             {0.0625, -0.4375, 0.0625, 0.125, -0.125, 0.125}, -- gnomon
         }
 
-minetest.register_node("tech:sundial", {
+minetest.register_node("exile_sundial:sundial", {
     description = S("Ceramic Sundial"),
     drawtype = "nodebox",
     stack_max = minimal.stack_max_bulky,
@@ -22,7 +22,7 @@ minetest.register_node("tech:sundial", {
 
 })
 
-minetest.register_node("tech:sundial_unfired", {
+minetest.register_node("exile_sundial:sundial_unfired", {
     description = S("Clay Sundial (unfired)"),
     tiles = { "nodes_nature_clay.png" },
     drawtype = "nodebox",
@@ -40,6 +40,6 @@ minetest.register_node("tech:sundial_unfired", {
     end,
     on_timer = function(pos, elapsed)
         --finished product, length
-        return ncrafting.fire_pottery(pos, "tech:sundial_unfired", "tech:sundial", base_firing)
+        return ncrafting.fire_pottery(pos, "exile_sundial:sundial_unfired", "exile_sundial:sundial", base_firing)
     end,
 })
